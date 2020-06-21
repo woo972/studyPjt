@@ -95,23 +95,23 @@ public class PostsApiControllerTest {
         assertThat(allPosts.get(0).getContent()).isEqualTo(newContent);
     }
 
-    @Test
-    public void delete_삭제성공(){
-        // given
-        Posts savedPost = postsRepository.save(PostsSaveRequestDto.builder()
-                                                                    .title("test")
-                                                                    .content("content")
-                                                                    .author("author")
-                                                                    .build()
-                                                                    .toEntity());
-        Long id = savedPost.getId();
-        String url = "http://localhost:"+port+"/api/v1/posts/"+id;
-
-        // when
-        restTemplate.delete(url);
-
-        // then
-        List<Posts> allPosts = postsRepository.findAll();
-        assertThat(allPosts.size()).isEqualTo(0);
-    }
+//    @Test
+//    public void delete_삭제성공(){
+//        // given
+//        Posts savedPost = postsRepository.save(PostsSaveRequestDto.builder()
+//                                                                    .title("test")
+//                                                                    .content("content")
+//                                                                    .author("author")
+//                                                                    .build()
+//                                                                    .toEntity());
+//        Long id = savedPost.getId();
+//        String url = "http://localhost:"+port+"/api/v1/posts/"+id;
+//
+//        // when
+//        restTemplate.delete(url);
+//
+//        // then
+//        List<Posts> allPosts = postsRepository.findAll();
+//        assertThat(allPosts.size()).isEqualTo(0);
+//    }
 }
